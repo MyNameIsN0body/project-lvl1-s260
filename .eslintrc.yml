@@ -1,0 +1,11 @@
+env:
+	node: true
+
+plugins:
+	- babel
+
+parser: babel-eslint
+
+
+rulse:
+	no-console: 0
