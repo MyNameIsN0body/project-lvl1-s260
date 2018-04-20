@@ -2,7 +2,7 @@
 //import { evenGame } from '..';
 
 //evenGame();
-import { hello } from '..';
+import { evenGame } from '../games/even';
 
 
-hello();
+evenGame();
