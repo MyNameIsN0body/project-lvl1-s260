@@ -47,29 +47,47 @@ export const randomNumber = () => {
   const number = Math.floor(Math.random() * 10000);
   return number.toFixed();
 };
-
+const countRounds = 3;
 export const structureGame = (task, game) => {
   console.log('Welcome to the Brain Games!');
-  console.log(`${car(task)}`);
+  console.log(`${task}`);
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName} !`);
+  
 
-  const interview = () => {
-    let countRounds = 3;
-    while (countRounds > 0) {
-      const gameQuestion = car(game());
-      const gameAnswer = cdr(game());
-      console.log(`Question: ${gameQuestion}`);
-      const playerAnswer = readlineSync.question('Your answer: ');
-      if (gameAnswer === playerAnswer) {
-        console.log('Correct!');
-      } else {
-        return console.log(`'yes' is wrong answer ;(. Correct answer was 'no'.\n   Let's try again, ${userName}!`);
-      }
-      countRounds -= 1;
+  // const interview = () => {
+  //   let countRounds = 3;
+  //   while (countRounds > 0) {
+  //     const gameQuestion = car(game());
+  //     const gameAnswer = cdr(game());
+  //     console.log(`Question: ${gameQuestion}`);
+  //     const playerAnswer = readlineSync.question('Your answer: ');
+  //     if (gameAnswer === playerAnswer) {
+  //       console.log('Correct!');
+  //     } else {
+  //       return console.log(`'yes' is wrong answer ;(. Correct answer was 'no'.\n   Let's try again, ${userName}!`);
+  //     }
+  //     countRounds -= 1;
+  //   }
+  //   return console.log(`Congratulations, ${userName}!`);
+  // };
+
+  // interview();
+  
+  const interview = (rounds) => {
+    if (rounds === 0) {
+      return console.log(`Congratulations, ${userName}!`);
     }
-    return console.log(`Congratulations, ${userName}!`);
+    const startGame = game();
+    const gameQuestion = car(startGame);
+    const gameAnswer = cdr(startGame);
+    console.log(`Question: ${gameQuestion}`);
+    const playerAnswer = readlineSync.question('Your answer: ');
+    if (gameAnswer !== playerAnswer) {
+      return console.log(`'yes' is wrong answer ;(. Correct answer was 'no'.\n   Let's try again, ${userName}!`);
+    }
+    console.log('Correct!');
+    return interview(rounds - 1);
   };
-
-  interview();
+  return interview(countRounds);
 };
