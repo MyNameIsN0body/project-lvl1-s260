@@ -53,7 +53,7 @@ export const structureGame = (task, game) => {
   console.log(`${task}`);
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName} !`);
-  
+
 
   // const interview = () => {
   //   let countRounds = 3;
@@ -73,7 +73,7 @@ export const structureGame = (task, game) => {
   // };
 
   // interview();
-  
+
   const interview = (rounds) => {
     if (rounds === 0) {
       return console.log(`Congratulations, ${userName}!`);
@@ -82,9 +82,7 @@ export const structureGame = (task, game) => {
     // const gameQuestion = car(startGame);
     // const gameAnswer = cdr(startGame);
     const gameQuestion = startGame[0];
-    console.log(gameQuestion);
     const gameAnswer = startGame[1];
-    console.log(gameAnswer);
     console.log(`Question: ${gameQuestion}`);
     const playerAnswer = readlineSync.question('Your answer: ');
     if (gameAnswer !== playerAnswer) {
