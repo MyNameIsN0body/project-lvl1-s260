@@ -52,7 +52,7 @@ export const structureGame = (task, game) => {
   console.log('Welcome to the Brain Games!');
   console.log(`${task}`);
   const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName} !`);
+  console.log(`Hello, ${userName} !\n`);
 
 
   // const interview = () => {
@@ -76,7 +76,7 @@ export const structureGame = (task, game) => {
 
   const interview = (rounds) => {
     if (rounds === 0) {
-      return console.log(`Congratulations, ${userName}!`);
+      return console.log(`Congratulations, ${userName}!\n`);
     }
     const startGame = game();
     // const gameQuestion = car(startGame);
@@ -86,7 +86,7 @@ export const structureGame = (task, game) => {
     console.log(`Question: ${gameQuestion}`);
     const playerAnswer = readlineSync.question('Your answer: ');
     if (gameAnswer !== playerAnswer) {
-      return console.log(`'yes' is wrong answer ;(. Correct answer was 'no'.\n   Let's try again, ${userName}!`);
+      return console.log(`'yes' is wrong answer ;(. Correct answer was 'no'.\n   Let's try again, ${userName}!\n`);
     }
     console.log('Correct!');
     return interview(rounds - 1);
