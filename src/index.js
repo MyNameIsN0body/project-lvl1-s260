@@ -79,8 +79,12 @@ export const structureGame = (task, game) => {
       return console.log(`Congratulations, ${userName}!`);
     }
     const startGame = game();
-    const gameQuestion = car(startGame);
-    const gameAnswer = cdr(startGame);
+    // const gameQuestion = car(startGame);
+    // const gameAnswer = cdr(startGame);
+    const gameQuestion = startGame[0];
+    console.log(gameQuestion);
+    const gameAnswer = startGame[1];
+    console.log(gameAnswer);
     console.log(`Question: ${gameQuestion}`);
     const playerAnswer = readlineSync.question('Your answer: ');
     if (gameAnswer !== playerAnswer) {
