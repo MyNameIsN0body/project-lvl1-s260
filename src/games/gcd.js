@@ -12,7 +12,7 @@ const gcd = (num1, num2) => {
 export const gcdGame = () => {
   const randomNum = [(Math.floor(Math.random() * 100)), (Math.floor(Math.random() * 100))];
   const question = `${randomNum[0]}   ${randomNum[1]}`;
-  const answer =  String(gcd(randomNum[0], randomNum[1]));
+  const answer = String(gcd(randomNum[0], randomNum[1]));
   const answerGame = [question, answer];
   return answerGame;
 };
