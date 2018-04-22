@@ -1,4 +1,3 @@
-import { cons, car, cdr } from 'hexlet-pairs';
 import { structureGame } from '../index';
 
 const task = 'Find the greatest common divisor of given numbers.';
@@ -11,9 +10,9 @@ const gcd = (num1, num2) => {
 };
 
 export const gcdGame = () => {
-  const randomNum = cons((Math.floor(Math.random() * 100)), (Math.floor(Math.random() * 100)));
-  const question = `${car(randomNum)}   ${cdr(randomNum)}`;
-  const answer =  String(gcd(car(randomNum), cdr(randomNum)));
+  const randomNum = [(Math.floor(Math.random() * 100)), (Math.floor(Math.random() * 100))];
+  const question = `${randomNum[0]}   ${randomNum[1]}`;
+  const answer =  String(gcd(randomNum[0], randomNum[1]));
   const answerGame = [question, answer];
   return answerGame;
 };
