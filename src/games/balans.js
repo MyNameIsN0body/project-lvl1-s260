@@ -7,8 +7,8 @@ const balanced = (str) => {
   let arrMax = arrNum[arrNum.length - 1];
   let arrMin = arrNum[0];
   if (arrMax - arrMin > 1) {
-    arrMax--;
-    arrMin++;
+    arrMax = Number(arrMax) - 1;
+    arrMin = Number(arrMin) + 1;
     const arr7 = arrNum.slice(1, arrNum.length - 1);
     const NA = [];
     const newArray = NA.concat(arrMin, arr7, arrMax).join('');
