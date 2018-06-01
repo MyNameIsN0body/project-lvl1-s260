@@ -1,12 +1,13 @@
 import { structureGame } from '../index';
+import randomNumber1 from '../math/math';
 
 const task = 'What is the result of the expression?';
 
 
 export const calcGame = () => {
-  const symbol = (Math.floor(Math.random() * 3));
-  const num1 = (Math.floor(Math.random() * 100));
-  const num2 = (Math.floor(Math.random() * 100));
+  const symbol = randomNumber1(1, 3);
+  const num1 = randomNumber1(1, 100);
+  const num2 = randomNumber1(1, 100);
   let question;
   let answer;
   switch (symbol) {
