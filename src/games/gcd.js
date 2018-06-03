@@ -1,4 +1,4 @@
-import { structureGame } from '../index';
+import structureGame from '../index';
 
 const task = 'Find the greatest common divisor of given numbers.';
 
