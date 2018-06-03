@@ -1,5 +1,5 @@
-import { structureGame } from '../index';
-import randomNumber1 from '../math/math';
+import structureGame from '../index';
+import randomNumber1 from './math';
 
 const task = 'What is the result of the expression?';
 
