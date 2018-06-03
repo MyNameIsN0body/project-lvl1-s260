@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 
 
 const countRounds = 3;
-const negative = "'yes' is wrong answer ;(. Correct answer was 'no'.\n   Let's try again,";
+const negative = ' is wrong answer ;(. Correct answer was ';
 const structureGame = (task, game) => {
   console.log('Welcome to the Brain Games!');
   console.log(`${task}`);
@@ -19,7 +19,7 @@ const structureGame = (task, game) => {
     console.log(`Question: ${gameQuestion}`);
     const playerAnswer = readlineSync.question('Your answer: ');
     if (gameAnswer !== playerAnswer) {
-      return console.log(`${negative} ${userName}!\n`);
+      return console.log(`"${playerAnswer}" ${negative} "${gameAnswer}" .\n Let's try again, ${userName}!\n`);
     }
     console.log('Correct!');
     return interview(rounds - 1);
