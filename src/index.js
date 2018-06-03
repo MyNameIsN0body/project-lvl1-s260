@@ -1,12 +1,9 @@
 import readlineSync from 'readline-sync';
 
-export const randomNumber = () => {
-  const number = Math.floor(Math.random() * 10000);
-  return number.toFixed();
-};
+
 const countRounds = 3;
 const negative = "'yes' is wrong answer ;(. Correct answer was 'no'.\n   Let's try again,";
-export const structureGame = (task, game) => {
+const structureGame = (task, game) => {
   console.log('Welcome to the Brain Games!');
   console.log(`${task}`);
   const userName = readlineSync.question('May I have your name? ');
@@ -29,3 +26,5 @@ export const structureGame = (task, game) => {
   };
   return interview(countRounds);
 };
+
+export default structureGame;
