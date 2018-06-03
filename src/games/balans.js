@@ -1,4 +1,5 @@
-import { structureGame, randomNumber } from '../index';
+import structureGame from '../index';
+import randomNumber1 from './math';
 
 const task = 'Balance the given number.';
 
@@ -19,8 +20,8 @@ const balanced = (str) => {
 
 
 export const balansGame = () => {
-  const question = randomNumber();
-  const answer = balanced(question);
+  const question = randomNumber1(1000, 10000);
+  const answer = balanced(String(question));
   const answerGame = [question, answer];
   return answerGame;
 };
