@@ -1,4 +1,5 @@
 import structureGame from '../index';
+import randomNumber1 from './math';
 
 const task = 'Find the greatest common divisor of given numbers.';
 
@@ -10,8 +11,8 @@ const gcd = (num1, num2) => {
 };
 
 export const gcdGame = () => {
-  const randomNum1 = Math.floor(Math.random() * 100);
-  const randomNum2 = Math.floor(Math.random() * 100);
+  const randomNum1 = randomNumber1(1, 100);
+  const randomNum2 = randomNumber1(1, 100);
   const question = `${randomNum1}   ${randomNum2}`;
   const answer = String(gcd(randomNum1, randomNum2));
   const answerGame = [question, answer];
