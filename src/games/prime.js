@@ -1,4 +1,5 @@
-import { structureGame } from '../index';
+import structureGame from '../index';
+import randomNumber1 from './math';
 
 const task = 'Is this number prime?';
 
@@ -15,7 +16,7 @@ export const primeGame = () => {
     return true;
   };
 
-  const question = Math.floor(Math.random() * 1000);
+  const question = randomNumber1(1, 1000);
   const answer = isPrime(question) ? 'yes' : 'no';
   const answerGame = [question, answer];
   return answerGame;
